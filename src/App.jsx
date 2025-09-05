@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { AuthProvider } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { PrivateRoute, PublicRoute } from './components/ProtectedRoute';
+import MainLayout from './components/MainLayout';
 import Login from './pages/auth/Login';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
@@ -38,7 +39,9 @@ function App() {
                 path="/home" 
                 element={
                   <PrivateRoute>
-                    <Home />
+                    <MainLayout>
+                      <Home />
+                    </MainLayout>
                   </PrivateRoute>
                 } 
               />
